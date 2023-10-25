@@ -2,8 +2,10 @@ from sqlalchemy import create_engine
 import pandas as pd
 import matplotlib.pyplot as plt
 
+pss = ""
+
 # Replace 'username' and 'password' with your MySQL username and password
-engine = create_engine('mysql://username:password.@localhost/sakila')
+engine = create_engine(f'mysql://root:{pss}@localhost/sakila')
 query = """
 SELECT c.name AS category, COUNT(r.rental_id) AS rental_count
 FROM category c
